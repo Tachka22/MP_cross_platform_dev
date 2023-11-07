@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpfButton", "wpfButton\wpfButton.csproj", "{36484561-A0BD-423B-8590-BC251B34B156}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36484561-A0BD-423B-8590-BC251B34B156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36484561-A0BD-423B-8590-BC251B34B156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36484561-A0BD-423B-8590-BC251B34B156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36484561-A0BD-423B-8590-BC251B34B156}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CBA86AC-68EF-4D17-B575-847EE7010C3F}
+	EndGlobalSection
+EndGlobal
