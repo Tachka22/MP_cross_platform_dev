@@ -1,0 +1,26 @@
+﻿<Window x:Class="wpfEventRoute.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfEventRoute"
+        mc:Ignorable="d"
+        Title="wpfEventRoute" Height="450" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Background="LightCyan">
+            <Button Content="Clear" Click="ButtonClear_Click" Margin="5"/>
+            <StackPanel Background="LightGreen" Height="100" MouseDown="TextBlock_MouseDown">
+                <WrapPanel Background="Aqua">
+                    <TextBlock Background="Red" Text="Up" MouseDown="TextBlock_MouseDown"/>
+                </WrapPanel>
+
+            </StackPanel>            
+        </StackPanel>
+        <ListBox x:Name="lbName" Grid.Column = "1"/>
+    </Grid>
+</Window>
