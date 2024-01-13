@@ -1,0 +1,133 @@
+﻿<Window x:Class="wpfImagesViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfImagesViewer"
+        mc:Ignorable="d"
+        Title="ImageСompare" Height="550" Width="900">
+    <Window.CommandBindings>
+        <CommandBinding Command="local:WindowCommands.Exit" Executed="Exit_Executed"/>
+    </Window.CommandBindings>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Button.Background" Value="Black" />
+                <Setter Property="Button.Foreground" Value="White" />
+                <Setter Property="Button.FontFamily" Value="Verdana" />
+                <Setter Property="Button.Height" Value="30"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <Setter Property="FontSize" Value="18" />
+                        <Setter Property="Foreground" Value="Purple" />
+                        <Setter Property="Background" Value="White"/>
+                    </MultiTrigger.Setters>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Menu  materialDesign:MenuAssist.TopLevelMenuItemHeight="30" BorderBrush="Black">
+            <MenuItem Header="Файл" VerticalAlignment="Center">
+                <MenuItem Header="Загрузить левое изображение"
+                          Click="Button_DownloadFirstImage_Click"/>
+                <MenuItem Header="Загрузить правое изображение"
+                            Click="Button_DownloadSecondImage_Click"/>
+                <Separator/>
+                <MenuItem Header="Выход" Command="local:WindowCommands.Exit" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Правка" >
+                <MenuItem Header="Диагонали"/>
+                <MenuItem Header="Круг"/>
+                <MenuItem Header="Направляющие"/>
+            </MenuItem>
+            <MenuItem Header="Вид" >
+                <MenuItem Header="Повернуть" 
+                          x:Name="RotateImage"/>
+            </MenuItem>
+            <MenuItem Header="Справка" >
+                <MenuItem Header="О программе" ></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <StackPanel>
+                    <Button
+                        Content="Загрузить"
+                        Margin="20"
+                        x:Name="button_DownloadFirstImage"/>
+                    <Border
+                        Margin="5"
+                        BorderBrush="Purple"
+                        Height="Auto"
+                        MinHeight="300"
+                        BorderThickness="2">
+                        <StackPanel>
+                            <Label
+                                x:Name="label_FirstImage"/>
+                            <Border x:Name="img1"
+                                    Height="Auto"
+                                    BorderBrush="Red"
+                                    ClipToBounds="True">
+                                <Image
+                                    Panel.ZIndex="-1"
+                                    x:Name="img_FirstImage"
+                                    RenderTransformOrigin="0.5,0.5">
+                                </Image>
+                            </Border>
+                            <Label
+                                x:Name="label_SizeFirstImage"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1">
+                <StackPanel>
+                    <Button
+                        Content="Загрузить"
+                        Margin="20"
+                        x:Name="button_DownloadSecondImage"/>
+                    <Border
+                        Margin="5"
+                        BorderBrush="Purple"
+                        MinHeight="300"
+                        Height="Auto"
+                        BorderThickness="2"
+                        x:Name="brd_SecondImage">
+                        <StackPanel>
+                            <Label
+                                x:Name="label_SeconfImage"/>
+                            <Border
+                                ClipToBounds="True"
+                                Height="Auto"
+                                BorderBrush="Red"
+                                x:Name="img2">
+                                <Image
+                                        x:Name="img_SecondImage"
+                                        RenderTransformOrigin="0.5,0.5">
+
+                                    </Image>
+                            </Border>
+                            <Label
+                                x:Name="label_SizeSecondImage"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
