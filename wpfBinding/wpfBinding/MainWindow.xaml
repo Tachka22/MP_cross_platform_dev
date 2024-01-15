@@ -1,0 +1,47 @@
+﻿<Window x:Class="wpfBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfBinding"
+        mc:Ignorable="d"
+        Title="wpfBinding" Height="450" Width="300">
+    <Window.Resources>
+        <local:Hero x:Key="Hero" Name="Турбо" Clan="Улица" HP="100"/>
+        <local:HeroX x:Key="HeroX" Name="Зима" Clan="Универсамоский"/>
+    </Window.Resources>
+    <StackPanel>
+        <TextBox x:Name="edFIO" Text="2qq4"/>
+        <TextBlock Text="{Binding ElementName=edFIO, Path=Text}"/>
+        <TextBlock Text="{Binding ElementName=edFIO, Path=Text, 
+            StringFormat= Привет {0} {0} !!! }"/>
+        <TextBlock Text="{Binding ElementName=edFIO, Path=Text.Length}"/>
+
+        <TextBox x:Name="edCaption"/>
+        <TextBlock x:Name="txtCaption" Background="LightGreen"/>
+
+        <StackPanel Background="DarkSalmon">
+            <TextBlock Text="{Binding Source={StaticResource Hero}, Path=Name}"/>
+            <TextBlock Text="{Binding Source={StaticResource Hero}, Path=Description}"/>
+            <TextBlock Text="{Binding Source={StaticResource Hero}, Path=Clan}"/>
+            <TextBlock Text="{Binding Source={StaticResource Hero}, Path=HP}"/>
+        </StackPanel>
+
+        <StackPanel Background="LightCoral" DataContext="{StaticResource Hero}">
+            <TextBlock Text="{Binding Path=Name}"/>
+            <TextBlock Text="{Binding Path=Description}"/>
+            <TextBlock Text="{Binding Path=Clan}"/>
+            <TextBlock Text="{Binding Path=HP}"/>
+        </StackPanel>
+        
+        <StackPanel Background="LightSeaGreen" DataContext="{StaticResource HeroX}">
+            <TextBox Text="{Binding Path=Name}"/>
+            <TextBox Text="{Binding Path=Description}"/>
+            <TextBox Text="{Binding Path=Clan}"/>
+            <TextBox Text="{Binding Path=HP}"/>
+            <Button Content="Click" Click="Button_Click"></Button>
+        </StackPanel>
+    </StackPanel>
+
+    
+</Window>
