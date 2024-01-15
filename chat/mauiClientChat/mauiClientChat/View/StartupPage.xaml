@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mauiClientChat.StartupPage"
+             Title="">
+    <Grid BackgroundColor="#483D8B">
+       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="90" />
+        </Grid.RowDefinitions>
+        <Frame Grid.Row="0"
+               BackgroundColor="Transparent"
+               BorderColor="White">
+            <VerticalStackLayout
+                HorizontalOptions="Center"
+                Spacing="5">
+                <Label
+                    x:Name="label_UserName"
+                    FontSize="20"/>
+                <Label
+                    x:Name="label_Status"
+                    TextColor="LightGreen"
+                    FontSize="Micro"/>
+            </VerticalStackLayout>
+        </Frame>
+       
+        <ScrollView Grid.Row="1"
+                    x:Name="scrollContent">
+            <StackLayout x:Name="StackL">
+                
+            </StackLayout>
+            
+        </ScrollView>
+        <Frame Grid.Row="2"
+               BackgroundColor="Transparent">
+            <HorizontalStackLayout
+                Spacing="30"
+                HorizontalOptions="Center">
+                <Button Text="Создать комнату"
+                        x:Name="btn_CreateDialog"/>
+                <Button Text="Войти в комнату"
+                        x:Name="btn_EnterDilog"/>
+            </HorizontalStackLayout>
+        </Frame>
+        
+    </Grid>
+</ContentPage>

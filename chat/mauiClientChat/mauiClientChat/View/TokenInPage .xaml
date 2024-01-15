@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mauiClientChat.MainPage"
+             Title="">
+    <VerticalStackLayout Padding="40" BackgroundColor="#483D8B">
+        <Label
+            FontSize="Micro"
+            Margin="0, 0, 0, 5"
+            Text="Введите токен:"/>
+        <Entry
+            x:Name="token"
+            Placeholder="325653"/>
+        <Button
+            TextColor="Black"
+            BackgroundColor="White"
+            FontSize="Default"
+            Margin="0,40,0,0"
+            x:Name="InChat"
+            Text="Войти в чат"
+            IsEnabled="False"/>
+    </VerticalStackLayout>
+
+
+</ContentPage>

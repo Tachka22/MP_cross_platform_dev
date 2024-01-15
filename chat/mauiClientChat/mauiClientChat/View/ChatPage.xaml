@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mauiClientChat.ChatPage"
+             Title="">
+    <Grid BackgroundColor="Navy">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                <GradientStop Offset="1" Color="#360033"/>
+                <GradientStop Offset="0" Color="#0b8793"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Frame Grid.Row="0"
+               BackgroundColor="Transparent"
+               BorderColor="Aqua"
+               
+               Padding="5"
+               Margin="2"
+               CornerRadius="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <BoxView Color="White" WidthRequest="35" HeightRequest="35" CornerRadius="15"
+                 HorizontalOptions="Center" VerticalOptions="Center" />
+                <VerticalStackLayout Grid.Column="1" >
+                    <Label  Margin="20,0,0,0"
+                            x:Name="label_ChatName"
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            />
+                    <Label
+                        Margin="20,0,0,0"
+                        x:Name="label_IdRoom">
+                    </Label>
+                </VerticalStackLayout>
+               
+            </Grid>
+            
+        </Frame>
+        <!-- Область отображения сообщений -->
+        <ScrollView Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                    x:Name="chatMessage"
+                    FontSize="18"
+                    HorizontalOptions="Start">
+
+                </Label>
+                <Label Grid.Column="1"
+                    x:Name="chatMessageMi"
+                    FontSize="18"
+                    HorizontalOptions="End">
+                </Label>
+            </Grid>
+        </ScrollView>
+       
+        <!-- Область ввода сообщения -->
+        <HorizontalStackLayout 
+            Grid.Row="2" 
+            HorizontalOptions="Center"
+            Spacing="40"
+            Margin="5">
+
+            <Editor x:Name="myChatMessage"
+                    Placeholder="Введите сообщение"/>
+
+
+            <Button x:Name="sendBtn"
+                    Clicked="sendBtn_Clicked"
+                    Grid.Column="1"
+                    Text="Отправить"
+                    FontSize="16"
+                    CornerRadius="15" />
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>
