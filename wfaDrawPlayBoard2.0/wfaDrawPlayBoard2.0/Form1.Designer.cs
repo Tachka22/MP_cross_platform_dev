@@ -34,8 +34,8 @@
             this.radioButton3_BWboard = new System.Windows.Forms.RadioButton();
             this.radioButtonGo = new System.Windows.Forms.RadioButton();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.drawpanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.drawpanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +105,14 @@
             this.trackBar1.Size = new System.Drawing.Size(104, 45);
             this.trackBar1.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(113, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 15);
+            this.label1.TabIndex = 5;
+            // 
             // drawpanel
             // 
             this.drawpanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -112,15 +120,6 @@
             this.drawpanel.Name = "drawpanel";
             this.drawpanel.Size = new System.Drawing.Size(875, 450);
             this.drawpanel.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 228);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
             // 
             // Form1
             // 

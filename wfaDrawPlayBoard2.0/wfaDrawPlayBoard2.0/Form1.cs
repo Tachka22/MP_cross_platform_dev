@@ -59,6 +59,9 @@ namespace wfaDrawPlayBoard2._0
 
         private void DrawPlayBoard(int itemsize, int boardszie, Color clr1, Color clr2, Color backclr, string name, bool LTText, bool ALLText)
         {
+            var s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var t = boardszie - 1;
+
             this.Text= name;
             drawpanel.BackColor = backclr;
             int x = itemsize, y = 0;
@@ -67,7 +70,8 @@ namespace wfaDrawPlayBoard2._0
                 for (int column = 0; column < boardszie; column++)
                 {
                     letterLabel = new Label();
-                    letterLabel.Text = ((char)('H' - column)).ToString();
+                    //letterLabel.Text = ((char)('H' - column)).ToString();
+                    letterLabel.Text = (s[t - column]).ToString();
                     letterLabel.Size = new Size(itemsize, itemsize);
                     letterLabel.Font = new Font("Times New Roman", 16.0f);
                     letterLabel.Location = new Point(x, y);
